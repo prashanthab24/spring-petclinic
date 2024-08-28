@@ -1,0 +1,22 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- PetClinicTest
+
+pool:
+  name: LinuxAgentPool
+
+steps:
+- checkout: https://github.com/prashanthab24/spring-petclinic.git
+  displayName: Code checkout
+
+- script: ls -l
+  displayName: 'List of files'
+
+- script: mvn clean package
+  displayName: 'maven code build'
+
+
